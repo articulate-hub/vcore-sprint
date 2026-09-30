@@ -1,0 +1,18 @@
+# Local secrets and key material — never commit
+.env
+.env.*
+*.pem
+*.key
+box-secrets.json
+**/box-secrets.json
+secrets.json
+**/*credentials*
+
+# Seat ledger state and payment inbox (local only)
+checkout/seats.json
+payments/inbox/
+payments/inbox/**
+
+# Python cache
+__pycache__/
+*.pyc

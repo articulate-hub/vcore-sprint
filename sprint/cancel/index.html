@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout cancelled — Vcore Sprint</title>
+  <meta name="robots" content="noindex" />
+  <style>
+
+    :root {
+      --ink: #121212;
+      --muted: #4a4a4a;
+      --line: #e5e5e5;
+      --bg: #fafafa;
+      --card: #fff;
+      --accent: #1a1a1a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      font-size: 1.05rem;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+    h1 { font-size: clamp(1.6rem, 4vw, 2.1rem); line-height: 1.25; margin: 0 0 0.75rem; font-weight: 600; }
+    h2 { font-size: 1.15rem; margin: 2.25rem 0 0.75rem; font-weight: 600; }
+    p { margin: 0 0 1rem; }
+    .muted { color: var(--muted); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.25rem 0 2rem; }
+    .btn {
+      display: inline-block;
+      padding: 0.7rem 1.15rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--ink);
+    }
+    a.btn-primary { background: var(--accent); color: #fff; }
+    button.btn { cursor: not-allowed; }
+    button.btn:disabled, .btn[aria-disabled="true"] {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    button.btn-primary:disabled {
+      background: var(--accent);
+      color: #fff;
+    }
+    .note {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      border-left: 3px solid var(--line);
+      padding-left: 0.85rem;
+      margin: 0 0 1.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.92rem;
+      background: var(--card);
+      margin: 0 0 1rem;
+    }
+    th, td { text-align: left; padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { width: 32%; font-weight: 600; }
+    ul { padding-left: 1.2rem; margin: 0 0 1rem; }
+    li { margin-bottom: 0.35rem; }
+    ol { padding-left: 1.2rem; }
+    .faq dt { font-weight: 600; margin-top: 1rem; font-family: system-ui, -apple-system, sans-serif; font-size: 0.95rem; }
+    .faq dd { margin: 0.35rem 0 0; color: var(--muted); }
+    .seats {
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.9rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .seats p { margin: 0.4rem 0 0; }
+    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
+    a { color: inherit; }
+
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="muted" style="font-family:system-ui,sans-serif;font-size:0.8rem;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1rem;">Vcore · Sprint</p>
+    <h1>Checkout cancelled — no charge.</h1>
+    <p>You left before payment. No seat was reserved.</p>
+    <p>If Sprint still fits (one landing page <strong>or</strong> up to three emails, async, one revision), you can return to the Sprint offer while seats remain.</p>
+    <p>If you need brand strategy, multi-page work, ads, or a retainer, Sprint is the wrong SKU — ask about custom instead.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://articulate-hub.github.io/vcore-sprint/sprint/">Return to Sprint</a>
+    </div>
+    <p class="note">Check seat count before retrying payment.</p>
+  </main>
+</body>
+</html>

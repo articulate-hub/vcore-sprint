@@ -4,8 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vcore Sprint — Fixed-scope copy pack</title>
-  <meta name="description" content="One landing page or up to three emails. Fixed scope, £1,500, seven business days. Two seats per month." />
+  <meta name="description" content="One landing page or up to three emails. Fixed scope, £1,500, seven business days from a complete brief. Two seats per calendar month." />
   <style>
+
     :root {
       --ink: #121212;
       --muted: #4a4a4a;
@@ -39,12 +40,19 @@
       font-size: 0.95rem;
       font-weight: 600;
       border: 1px solid var(--accent);
+      background: transparent;
+      color: var(--ink);
     }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary[aria-disabled="true"], .btn-primary.disabled {
-      opacity: 0.45; pointer-events: none; cursor: not-allowed;
+    a.btn-primary { background: var(--accent); color: #fff; }
+    button.btn { cursor: not-allowed; }
+    button.btn:disabled, .btn[aria-disabled="true"] {
+      opacity: 0.45;
+      cursor: not-allowed;
     }
-    .btn-ghost { background: transparent; color: var(--ink); }
+    button.btn-primary:disabled {
+      background: var(--accent);
+      color: #fff;
+    }
     .note {
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 0.85rem;
@@ -76,8 +84,10 @@
       padding: 0.75rem 1rem;
       margin-bottom: 1.5rem;
     }
+    .seats p { margin: 0.4rem 0 0; }
     footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
     a { color: inherit; }
+
   </style>
 </head>
 <body>
@@ -87,25 +97,33 @@
     <p class="hero-sub">You already know what you need written. Sprint is the thinner pack: async intake, one revision round, no strategy call. Pay once. Choose one track. Get the copy.</p>
 
     <div class="seats" id="seats">
-      <strong>Seats this month:</strong> <span id="seat-count">Checkout not live yet</span> · 2 seats per calendar month when open
+      <strong>Seats are not on sale from this page yet.</strong>
+      <p id="checkout-hold">Checkout is not open on this page yet.</p>
+      <p>2 seats per calendar month. When both seats are taken, checkout pauses until the next month opens.</p>
     </div>
 
     <div class="cta-row">
-      <a class="btn btn-primary disabled" id="buy" href="#pricing" aria-disabled="true">Checkout opening soon</a>
-      <a class="btn btn-ghost" href="#included">See what’s included</a>
+      <a class="btn btn-primary" href="#seats">Check seat availability</a>
+      <a class="btn" href="#included">See what’s included</a>
     </div>
-    <p class="note">Payment will be Stripe Checkout (£1,500 GBP). Until keys are wired, this page is the offer only — no charge can be taken here.</p>
 
     <h2>Before the price — what “done” looks like</h2>
+    <p>Before you buy, know exactly what “done” looks like:</p>
     <table>
       <thead><tr><th>Track</th><th>You receive</th></tr></thead>
       <tbody>
-        <tr><th>A — Landing page</th><td>Hero, body sections, and one primary CTA — ready to hand to your designer or developer</td></tr>
-        <tr><th>B — Emails</th><td>Up to three emails (welcome, launch, or nurture — you choose the job at intake)</td></tr>
+        <tr>
+          <th>A — Landing page</th>
+          <td>Hero, body sections, and one primary CTA — ready to hand to your designer or developer</td>
+        </tr>
+        <tr>
+          <th>B — Emails</th>
+          <td>Up to three emails (welcome, launch, or nurture — you choose the job at intake)</td>
+        </tr>
       </tbody>
     </table>
     <p>Both tracks include: one structured intake brief, one revision round, delivery within <strong>7 business days</strong> of a complete brief, async only.</p>
-    <p class="muted">What you do not get in this pack is listed under Exclusions. That clarity is the product.</p>
+    <p class="muted">What you do <strong>not</strong> get in this pack is listed under Exclusions. That clarity is the product.</p>
 
     <h2>Who this is for</h2>
     <p>Sprint fits if you:</p>
@@ -118,7 +136,6 @@
     <p>Sprint is a poor fit if you need brand strategy, a multi-page site, ads, a retainer, unlimited revisions, or an outcome guarantee. Those sit outside this SKU — ask about custom work separately.</p>
 
     <h2 id="included">What’s included (£1,500)</h2>
-    <p class="note">Price is £1,500 GBP. No VAT (seller not VAT-registered).</p>
     <ul>
       <li><strong>One track, chosen at intake:</strong> (A) one landing page (hero + body + CTA) <strong>or</strong> (B) up to three emails</li>
       <li>Structured intake form / brief</li>
@@ -143,11 +160,11 @@
 
     <h2>How it works</h2>
     <ol>
-      <li><strong>Check a seat</strong> — If a seat is open, pay £1,500 via Stripe Checkout.</li>
-      <li><strong>Complete intake</strong> — You receive the brief. The 7-business-day clock starts only when the brief is complete.</li>
+      <li><strong>Check a seat</strong> — If a seat is open, pay £1,500 via Stripe Checkout. Checkout is not open on this page yet.</li>
+      <li><strong>Complete intake</strong> — You receive the brief. The 7-business-day clock starts only when the brief is complete. Incomplete briefs pause the clock, not the expectation of quality.</li>
       <li><strong>Draft</strong> — Copy is written to your brief.</li>
       <li><strong>One revision</strong> — You send consolidated notes once. We revise once.</li>
-      <li><strong>Handoff</strong> — Final files delivered.</li>
+      <li><strong>Handoff</strong> — Final files delivered. You’re done unless you request out-of-scope work (quoted separately).</li>
     </ol>
 
     <h2 id="pricing">Pricing and seats</h2>
@@ -155,11 +172,18 @@
       <tbody>
         <tr><th>Price</th><td>£1,500 per pack (no VAT)</td></tr>
         <tr><th>Seats</th><td>2 per calendar month</td></tr>
-        <tr><th>When full</th><td>Checkout pauses until the next month</td></tr>
+        <tr><th>When full</th><td>Checkout pauses until the next month opens</td></tr>
         <tr><th>Payment</th><td>Stripe Checkout — card payment upfront</td></tr>
       </tbody>
     </table>
     <p>No deposit theatre. No “book a call to get the price.” The price is the price.</p>
+    <p>If a seat is open and the scope matches, checkout is the next step. Checkout is not open on this page yet.</p>
+
+    <div class="cta-row">
+      <button type="button" class="btn btn-primary" id="pay" disabled aria-disabled="true">Pay £1,500</button>
+    </div>
+    <p class="note" id="pay-note">£1,500 flat. No VAT. Payment is for one Sprint pack this calendar month. Refunds only if work is undelivered or we breach the stated delivery SLA. No ROI guarantee. Scope is fixed; add-ons quoted separately.</p>
+    <p class="note">Card payment via Stripe. You will receive intake instructions by email after payment. Checkout is not open on this page yet, so this Pay control does not take payment.</p>
 
     <h2>FAQ</h2>
     <dl class="faq">
@@ -181,14 +205,15 @@
 
     <h2>Closing</h2>
     <p>You now know the tracks, the exclusions, the timeline, and the seat limit.</p>
-    <p>If that matches what you need written this month — and a seat is open — pay and send the brief when Checkout is live.</p>
+    <p>If that matches what you need written this month — and a seat is open — pay and send the brief.</p>
     <div class="cta-row">
-      <a class="btn btn-primary disabled" href="#pricing" aria-disabled="true">Checkout opening soon</a>
+      <button type="button" class="btn btn-primary" disabled aria-disabled="true">Check seats / Buy Sprint</button>
     </div>
+    <p class="note">Checkout is not open on this page yet. Seats are not on sale from this page yet.</p>
     <p class="muted">If the scope is larger, request custom work instead of forcing Sprint to stretch.</p>
 
     <footer>
-      Vcore · Sprint interim host · Price £1,500 (no VAT) · Proof section omitted until approved assets exist.
+      Vcore · Sprint · £1,500 per pack · 2 seats per calendar month.
     </footer>
   </main>
 </body>
