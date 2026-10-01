@@ -24,3 +24,6 @@ intake/notices/
 intake/notices/**
 checkout/last_seen_paid_ids.json
 checkout/october_payment_link.json
+
+# Appwrite sync key — never commit
+intake/appwrite.local.json

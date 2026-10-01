@@ -88,9 +88,9 @@
     </ol>
 
     <h2>Brief</h2>
-    <form id="intake" method="post" action="./submit/" enctype="multipart/form-data">
+    <form id="intake" method="post" action="https://fra.cloud.appwrite.io/v1/databases/sprint/collections/briefs/documents">
       <label for="buyer_contact">Buyer contact <span class="hint">name and email or phone</span></label>
-      <input id="buyer_contact" name="buyer_contact" type="text" required autocomplete="name" />
+      <input id="buyer_contact" name="buyer_contact" type="text" required maxlength="300" autocomplete="name" />
 
       <fieldset>
         <legend>Selected track</legend>
@@ -101,32 +101,31 @@
       </fieldset>
 
       <label for="offer_details">Offer details <span class="hint">what you sell</span></label>
-      <textarea id="offer_details" name="offer_details" required></textarea>
+      <textarea id="offer_details" name="offer_details" required maxlength="2000"></textarea>
 
       <label for="audience">Audience</label>
-      <textarea id="audience" name="audience" required></textarea>
+      <textarea id="audience" name="audience" required maxlength="2000"></textarea>
 
       <label for="price">Price <span class="hint">the price of what you sell</span></label>
-      <input id="price" name="price" type="text" required />
+      <input id="price" name="price" type="text" required maxlength="80" />
 
       <label for="intended_action">Intended action <span class="hint">what the reader should do</span></label>
-      <textarea id="intended_action" name="intended_action" required></textarea>
+      <textarea id="intended_action" name="intended_action" required maxlength="2000"></textarea>
 
-      <label for="urls_or_files">URLs or files <span class="hint">links to the page, list, or files. A file chosen here is not stored by this public page.</span></label>
-      <textarea id="urls_or_files" name="urls_or_files"></textarea>
-      <input id="files" name="files" type="file" multiple />
+      <label for="urls_or_files">URLs or files <span class="hint">links to the page, list, or files</span></label>
+      <textarea id="urls_or_files" name="urls_or_files" required maxlength="2000"></textarea>
 
       <label for="brand_voice">Brand voice</label>
-      <textarea id="brand_voice" name="brand_voice" required></textarea>
+      <textarea id="brand_voice" name="brand_voice" required maxlength="2000"></textarea>
 
       <label for="approved_factual_claims">Approved factual claims <span class="hint">facts you want used. If you have none, say so. We do not invent proof.</span></label>
-      <textarea id="approved_factual_claims" name="approved_factual_claims" required></textarea>
+      <textarea id="approved_factual_claims" name="approved_factual_claims" required maxlength="3000"></textarea>
 
       <label for="required_timing">Required timing</label>
-      <textarea id="required_timing" name="required_timing" required></textarea>
+      <textarea id="required_timing" name="required_timing" required maxlength="1000"></textarea>
 
       <button class="btn" type="submit">Send brief</button>
-      <p id="intake-result" class="note">This public page has no receiver. Sending the form here does not store the brief. The team confirms when the brief is complete.</p>
+      <p id="intake-result" class="note">Sending this form stores the brief. A visit to this page is not proof of payment. Payment alone does not start the clock. The team confirms when the brief is complete.</p>
     </form>
 
     <p class="note">Refunds: undelivered work or SLA breach only.</p>
@@ -135,8 +134,43 @@
   <script>
     document.getElementById("intake").addEventListener("submit", function (event) {
       event.preventDefault();
+      var form = event.currentTarget;
       var note = document.getElementById("intake-result");
-      note.textContent = "Not stored. This public page has no receiver, so the brief was not saved. A visit here is not proof of payment. Payment alone does not start the clock. The team confirms when the brief is complete.";
+      var button = form.querySelector("button");
+      var data = {
+        buyer_contact: form.buyer_contact.value,
+        track: (form.track.value || "").toUpperCase(),
+        offer_details: form.offer_details.value,
+        audience: form.audience.value,
+        price: form.price.value,
+        intended_action: form.intended_action.value,
+        urls_or_files: form.urls_or_files.value,
+        brand_voice: form.brand_voice.value,
+        approved_factual_claims: form.approved_factual_claims.value,
+        required_timing: form.required_timing.value
+      };
+      button.disabled = true;
+      note.textContent = "Sending the brief.";
+      fetch("https://fra.cloud.appwrite.io/v1/databases/sprint/collections/briefs/documents", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-Appwrite-Project": "6abdbf8600318e9e882d"
+        },
+        body: JSON.stringify({ documentId: "unique()", data: data })
+      }).then(function (res) {
+        if (!res.ok) {
+          throw new Error("not stored");
+        }
+        return res.json();
+      }).then(function () {
+        note.textContent = "Brief stored. A visit to this page is not proof of payment. Payment alone does not start the clock. The team confirms when the brief is complete. The seven business days start only after that confirmation.";
+        form.reset();
+      }).catch(function () {
+        note.textContent = "Not stored. The brief was not saved. A visit here is not proof of payment. Payment alone does not start the clock. The team confirms when the brief is complete.";
+      }).then(function () {
+        button.disabled = false;
+      });
     });
   </script>
 </body>
