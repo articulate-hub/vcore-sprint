@@ -6,7 +6,6 @@
   <title>Vcore Sprint — Fixed-scope copy pack</title>
   <meta name="description" content="One landing page or up to three emails. Fixed scope, £1,500, seven business days from a complete brief. Two seats per calendar month." />
   <style>
-
     :root {
       --ink: #121212;
       --muted: #4a4a4a;
@@ -27,10 +26,11 @@
     .wrap { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
     h1 { font-size: clamp(1.6rem, 4vw, 2.1rem); line-height: 1.25; margin: 0 0 0.75rem; font-weight: 600; }
     h2 { font-size: 1.15rem; margin: 2.25rem 0 0.75rem; font-weight: 600; }
+    h3 { font-size: 1.02rem; margin: 1.25rem 0 0.4rem; font-weight: 600; }
     p { margin: 0 0 1rem; }
     .muted { color: var(--muted); }
     .hero-sub { font-size: 1.05rem; color: var(--muted); margin-bottom: 1.5rem; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.25rem 0 2rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.25rem 0 0.5rem; }
     .btn {
       display: inline-block;
       padding: 0.7rem 1.15rem;
@@ -44,33 +44,14 @@
       color: var(--ink);
     }
     a.btn-primary { background: var(--accent); color: #fff; }
-    button.btn { cursor: not-allowed; }
-    button.btn:disabled, .btn[aria-disabled="true"] {
-      opacity: 0.45;
-      cursor: not-allowed;
-    }
-    button.btn-primary:disabled {
-      background: var(--accent);
-      color: #fff;
-    }
     .note {
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 0.85rem;
       color: var(--muted);
       border-left: 3px solid var(--line);
       padding-left: 0.85rem;
-      margin: 0 0 1.5rem;
+      margin: 0.75rem 0 1rem;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 0.92rem;
-      background: var(--card);
-      margin: 0 0 1rem;
-    }
-    th, td { text-align: left; padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { width: 32%; font-weight: 600; }
     ul { padding-left: 1.2rem; margin: 0 0 1rem; }
     li { margin-bottom: 0.35rem; }
     ol { padding-left: 1.2rem; }
@@ -87,133 +68,119 @@
     .seats p { margin: 0.4rem 0 0; }
     footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
     a { color: inherit; }
-
   </style>
 </head>
 <body>
   <main class="wrap">
     <p class="muted" style="font-family:system-ui,sans-serif;font-size:0.8rem;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1rem;">Vcore · Sprint</p>
     <h1>One landing page, or up to three emails — fixed scope, fixed price, delivered in seven business days.</h1>
-    <p class="hero-sub">You already know what you need written. Sprint is the thinner pack: async intake, one revision round, no strategy call. Pay once. Choose one track. Get the copy.</p>
+    <p class="hero-sub">One seat. One track. You send one written brief. You get one revision. The seven business days start when that brief is complete. Async only. No call.</p>
 
     <div class="seats" id="seats">
-      <strong>Seats open</strong>
-      <p id="seat-line">2 of 2 seats left this month</p>
-      <p>2 seats per calendar month. When both seats are taken, checkout pauses until the next month opens.</p>
+      <p>2 seats per calendar month.</p>
     </div>
 
     <div class="cta-row">
-      <a class="btn btn-primary" href="#seats">Check seat availability</a>
       <a class="btn" href="#included">See what’s included</a>
     </div>
 
-    <h2>Before the price — what “done” looks like</h2>
-    <p>Before you buy, know exactly what “done” looks like:</p>
-    <table>
-      <thead><tr><th>Track</th><th>You receive</th></tr></thead>
-      <tbody>
-        <tr>
-          <th>A — Landing page</th>
-          <td>Hero, body sections, and one primary CTA — ready to hand to your designer or developer</td>
-        </tr>
-        <tr>
-          <th>B — Emails</th>
-          <td>Up to three emails (welcome, launch, or nurture — you choose the job at intake)</td>
-        </tr>
-      </tbody>
-    </table>
-    <p>Both tracks include: one structured intake brief, one revision round, delivery within <strong>7 business days</strong> of a complete brief, async only.</p>
-    <p class="muted">What you do <strong>not</strong> get in this pack is listed under Exclusions. That clarity is the product.</p>
-
-    <h2>Who this is for</h2>
-    <p>Sprint fits if you:</p>
+    <h2>Who it fits</h2>
+    <p>Sprint fits if all four are already true:</p>
     <ul>
-      <li>Sell online (DTC, educator, creator, or similar) and need <strong>one</strong> conversion asset finished, not a full brand programme</li>
-      <li>Prefer a published scope and price over a discovery call and custom proposal</li>
-      <li>Can complete a written brief (offer, audience, proof points, tone notes) without a live workshop</li>
-      <li>Accept async delivery and a hard revision limit</li>
+      <li>You are already selling.</li>
+      <li>You can name the audience.</li>
+      <li>You have a price.</li>
+      <li>You already have traffic or subscribers.</li>
     </ul>
-    <p>Sprint is a poor fit if you need brand strategy, a multi-page site, ads, a retainer, unlimited revisions, or an outcome guarantee. Those sit outside this SKU — ask about custom work separately.</p>
+    <p>You choose one track. Track A is one landing page. Track B is up to three emails.</p>
+    <p>Sprint does not fit if you need the audience found, the price set, or the demand built. It also does not fit if you need a call, ads, a multi-page site, a retainer, or a results guarantee.</p>
 
-    <h2 id="included">What’s included (£1,500)</h2>
+    <h2>What the brief needs</h2>
+    <p>The clock does not start until the brief is complete. Send:</p>
     <ul>
-      <li><strong>One track, chosen at intake:</strong> (A) one landing page (hero + body + CTA) <strong>or</strong> (B) up to three emails</li>
-      <li>Structured intake form / brief</li>
-      <li>Draft delivery within <strong>7 business days</strong> of a <strong>complete</strong> intake brief</li>
-      <li><strong>One</strong> revision round (consolidated feedback in one pass)</li>
-      <li>Async communication only — no strategy call in the pack</li>
-      <li>Final copy in an editable format (e.g. Google Doc or equivalent)</li>
+      <li>What you sell, and the price.</li>
+      <li>Who it is for.</li>
+      <li>Where those people already come from (the site, the list, or another source you already have).</li>
+      <li>The track. For emails, the job of each one (up to three).</li>
+      <li>Tone, plus any line that must stay or must not be said.</li>
+      <li>Facts you want used. If you have none, say so. We do not invent proof.</li>
     </ul>
-    <p><strong>Seats:</strong> 2 per calendar month. When both seats are taken, checkout pauses until the next month opens.</p>
+    <p>We do not research the market, and we do not set the offer.</p>
 
-    <h2>What’s excluded</h2>
+    <h2 id="included">What you receive</h2>
+    <h3>Track A — one landing page</h3>
+    <p>Hero, body, and one primary call to action. Copy only, ready to hand to whoever builds the page.</p>
+    <h3>Track B — up to three emails</h3>
+    <p>Up to three emails. You name the job of each one in the brief.</p>
+    <p><strong>Both tracks</strong></p>
     <ul>
-      <li>Brand strategy or positioning workshops</li>
-      <li>Multi-page websites</li>
-      <li>Ads (paid social, search, etc.)</li>
-      <li>Retainers or ongoing copy queues</li>
-      <li>Unlimited revisions</li>
-      <li>ROI, conversion, or revenue guarantees</li>
-      <li>Live strategy or kickoff calls inside this pack</li>
+      <li>One written brief.</li>
+      <li>One revision, from one set of notes.</li>
+      <li>Delivery within seven business days of a complete brief.</li>
+      <li>Async only.</li>
+      <li>Final copy in an editable file.</li>
     </ul>
-    <p>Anything beyond the pack is quoted separately — we do not invent add-on prices on this page.</p>
+    <p>One seat buys one track. A page and emails together are two seats, not one.</p>
+
+    <h2>Not in the pack</h2>
+    <ul>
+      <li>Calls of any kind</li>
+      <li>Ads</li>
+      <li>Multi-page sites</li>
+      <li>Retainers</li>
+      <li>More than one revision</li>
+      <li>A guarantee of sales, conversions, or revenue</li>
+      <li>Strategy or research</li>
+    </ul>
+    <p>Anything outside the pack is quoted separately. This page does not list add-on prices.</p>
 
     <h2>How it works</h2>
     <ol>
-      <li><strong>Check a seat</strong> — If a seat is open, pay £1,500 via Stripe Checkout.</li>
-      <li><strong>Complete intake</strong> — You receive the brief. The 7-business-day clock starts only when the brief is complete. Incomplete briefs pause the clock, not the expectation of quality.</li>
-      <li><strong>Draft</strong> — Copy is written to your brief.</li>
-      <li><strong>One revision</strong> — You send consolidated notes once. We revise once.</li>
-      <li><strong>Handoff</strong> — Final files delivered. You’re done unless you request out-of-scope work (quoted separately).</li>
+      <li>If a seat is open, pay £1,500.</li>
+      <li>Send the brief. The seven business days start when it is complete.</li>
+      <li>The team writes the draft to that brief.</li>
+      <li>You send one set of notes. The team revises once.</li>
+      <li>You receive the final file.</li>
     </ol>
+    <p>Lale manages the buyer and the scope. The team produces the work.</p>
 
-    <h2 id="pricing">Pricing and seats</h2>
-    <table>
-      <tbody>
-        <tr><th>Price</th><td>£1,500 per pack (no VAT)</td></tr>
-        <tr><th>Seats</th><td>2 per calendar month</td></tr>
-        <tr><th>When full</th><td>Checkout pauses until the next month opens</td></tr>
-        <tr><th>Payment</th><td>Stripe Checkout — card payment upfront</td></tr>
-      </tbody>
-    </table>
-    <p>No deposit theatre. No “book a call to get the price.” The price is the price.</p>
-    <p>If a seat is open and the scope matches, checkout is the next step.</p>
-
+    <h2>Pay</h2>
     <div class="cta-row">
       <a class="btn btn-primary" id="pay" href="https://buy.stripe.com/3cIfZgdHn8OX0Xo0HJ2cg00">Pay £1,500</a>
     </div>
-    <p class="note" id="pay-note">£1,500 flat. No VAT. Payment is for one Sprint pack this calendar month. Refunds only if work is undelivered or we breach the stated delivery SLA. No ROI guarantee. Scope is fixed; add-ons quoted separately.</p>
-    <p class="note">Card payment via Stripe. You will receive intake instructions by email after payment.</p>
+    <p class="note">£1,500 flat. No VAT. One seat, one track: one landing page (hero, body, and one call to action), or up to three emails. One revision. Seven business days from a complete brief. Async only.</p>
+    <p class="note">£1,500 flat. No VAT. Payment is for one Sprint pack this calendar month. Refunds only if work is undelivered or we breach the stated delivery SLA. No ROI guarantee. Scope is fixed; add-ons quoted separately.</p>
+    <p class="note">Card payment via Stripe.</p>
 
     <h2>FAQ</h2>
     <dl class="faq">
       <dt>Is there a strategy call?</dt>
-      <dd>No. Sprint is async. Custom work can include calls; this pack does not.</dd>
-      <dt>When does the 7 business days start?</dt>
-      <dd>When your intake brief is complete — not on payment day if the brief is still partial.</dd>
-      <dt>What if I need both a landing page and emails?</dt>
-      <dd>That is outside a single Sprint seat. Ask for a custom quote, or buy separate seats in separate months if capacity allows (still one track per pack).</dd>
-      <dt>Can I get more revisions?</dt>
-      <dd>Not inside the pack. Extra rounds are quoted separately.</dd>
+      <dd>No. Sprint is async. There is no call in this pack.</dd>
+      <dt>When do the seven business days start?</dt>
+      <dd>When the brief is complete, not on the day you pay if the brief is still missing pieces.</dd>
+      <dt>What if I need a page and emails?</dt>
+      <dd>That is two tracks. One seat is one track.</dd>
+      <dt>Can I have more than one revision?</dt>
+      <dd>Not in this pack. Extra rounds are quoted separately.</dd>
       <dt>What if I don’t like the copy?</dt>
       <dd>Taste alone is not a refund ground. Refunds apply only if work is undelivered or we breach the stated SLA (7 business days from a complete brief, one revision round as defined).</dd>
       <dt>Who is this not for?</dt>
-      <dd>Anyone needing brand strategy, multi-page sites, ads, retainers, unlimited revisions, or guaranteed ROI.</dd>
+      <dd>Anyone who is not already selling, or who still needs an audience, a price, or a source of traffic. Also anyone who needs a call, ads, a multi-page site, a retainer, or a results guarantee.</dd>
       <dt>Where does payment go?</dt>
       <dd>Stripe Checkout on Vcore’s account (owner: Lale). Acquisition partners do not take payment.</dd>
     </dl>
 
-    <h2>Closing</h2>
-    <p>You now know the tracks, the exclusions, the timeline, and the seat limit.</p>
-    <p>If that matches what you need written this month — and a seat is open — pay and send the brief.</p>
+    <h2>Close</h2>
+    <p>You have the fit, the brief, the two tracks, and the price.</p>
+    <p>If a seat is open and that is the work you need, pay and send the brief.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://buy.stripe.com/3cIfZgdHn8OX0Xo0HJ2cg00">Pay £1,500</a>
     </div>
-    <p class="note">£1,500 flat. No VAT. Two seats this calendar month.</p>
-    <p class="muted">If the scope is larger, request custom work instead of forcing Sprint to stretch.</p>
+    <p class="note">£1,500 flat. No VAT. One seat, one track: one landing page (hero, body, and one call to action), or up to three emails. Two seats this calendar month.</p>
+    <p class="muted">If you need more than one track, do not stretch this pack.</p>
 
     <footer>
-      Vcore · Sprint · £1,500 per pack · 2 seats per calendar month.
+      Vcore · Sprint · £1,500 flat · No VAT · 2 seats per calendar month.
     </footer>
   </main>
 </body>

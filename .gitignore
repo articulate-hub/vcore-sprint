@@ -16,3 +16,11 @@ payments/inbox/**
 # Python cache
 __pycache__/
 *.pyc
+
+# Buyer intake, notices, and last-seen payment ids — do not commit
+intake/submissions/
+intake/submissions/**
+intake/notices/
+intake/notices/**
+checkout/last_seen_paid_ids.json
+checkout/october_payment_link.json

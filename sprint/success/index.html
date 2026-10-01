@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Payment received — Vcore Sprint</title>
+  <title>Intake brief — Vcore Sprint</title>
   <meta name="robots" content="noindex" />
   <style>
-
     :root {
       --ink: #121212;
       --muted: #4a4a4a;
@@ -29,30 +28,6 @@
     h2 { font-size: 1.15rem; margin: 2.25rem 0 0.75rem; font-weight: 600; }
     p { margin: 0 0 1rem; }
     .muted { color: var(--muted); }
-    .hero-sub { font-size: 1.05rem; color: var(--muted); margin-bottom: 1.5rem; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.25rem 0 2rem; }
-    .btn {
-      display: inline-block;
-      padding: 0.7rem 1.15rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      border: 1px solid var(--accent);
-      background: transparent;
-      color: var(--ink);
-    }
-    a.btn-primary { background: var(--accent); color: #fff; }
-    button.btn { cursor: not-allowed; }
-    button.btn:disabled, .btn[aria-disabled="true"] {
-      opacity: 0.45;
-      cursor: not-allowed;
-    }
-    button.btn-primary:disabled {
-      background: var(--accent);
-      color: #fff;
-    }
     .note {
       font-family: system-ui, -apple-system, sans-serif;
       font-size: 0.85rem;
@@ -61,50 +36,108 @@
       padding-left: 0.85rem;
       margin: 0 0 1.5rem;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 0.92rem;
-      background: var(--card);
-      margin: 0 0 1rem;
-    }
-    th, td { text-align: left; padding: 0.65rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { width: 32%; font-weight: 600; }
-    ul { padding-left: 1.2rem; margin: 0 0 1rem; }
-    li { margin-bottom: 0.35rem; }
     ol { padding-left: 1.2rem; }
-    .faq dt { font-weight: 600; margin-top: 1rem; font-family: system-ui, -apple-system, sans-serif; font-size: 0.95rem; }
-    .faq dd { margin: 0.35rem 0 0; color: var(--muted); }
-    .seats {
+    li { margin-bottom: 0.35rem; }
+    form {
       font-family: system-ui, -apple-system, sans-serif;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       background: var(--card);
       border: 1px solid var(--line);
-      padding: 0.75rem 1rem;
-      margin-bottom: 1.5rem;
+      padding: 1rem 1rem 0.5rem;
+      margin: 0 0 1.5rem;
     }
-    .seats p { margin: 0.4rem 0 0; }
-    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
+    label { display: block; font-weight: 600; margin: 0.9rem 0 0.3rem; }
+    .hint { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+    input[type="text"], input[type="email"], input[type="url"], textarea, select {
+      width: 100%;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 0.5rem 0.6rem;
+    }
+    textarea { min-height: 6rem; resize: vertical; }
+    fieldset { border: 0; padding: 0; margin: 0.9rem 0 0; }
+    legend { font-weight: 600; padding: 0; }
+    .radios label { font-weight: 400; margin: 0.35rem 0; }
+    button.btn {
+      margin: 1rem 0 0.75rem;
+      padding: 0.7rem 1.15rem;
+      border-radius: 4px;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+    }
     a { color: inherit; }
-
   </style>
 </head>
 <body>
   <main class="wrap">
     <p class="muted" style="font-family:system-ui,sans-serif;font-size:0.8rem;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:1rem;">Vcore · Sprint</p>
-    <h1>Payment received. Next step: complete your intake brief.</h1>
-    <p>Thanks. Your Sprint seat is booked for this calendar month.</p>
-    <p>The intake form is not on this page yet. Use the payment confirmation email for the brief link.</p>
+    <h1>Intake brief</h1>
+    <p><strong>A visit to this page is not proof of payment.</strong></p>
+    <p><strong>Payment alone does not start the clock.</strong> The team confirms when the brief is complete. The seven business days start only after that confirmation.</p>
     <ol>
-      <li>Check your email for the intake form / brief link.</li>
-      <li>Choose track A (landing page) or B (up to three emails) on that form.</li>
-      <li>The <strong>7 business-day</strong> delivery clock starts when the brief is <strong>complete</strong> — not while fields are still empty.</li>
-      <li>You get <strong>one</strong> revision round after the draft.</li>
+      <li>Choose track A (one landing page) or track B (up to three emails).</li>
+      <li>You get one revision, from one set of notes, after the draft.</li>
+      <li>Async only. No call.</li>
     </ol>
-    <p>Questions about scope? Reply to the confirmation email. Acquisition partners will not DM you from personal accounts to renegotiate scope.</p>
+
+    <h2>Brief</h2>
+    <form id="intake" method="post" action="./submit/" enctype="multipart/form-data">
+      <label for="buyer_contact">Buyer contact <span class="hint">name and email or phone</span></label>
+      <input id="buyer_contact" name="buyer_contact" type="text" required autocomplete="name" />
+
+      <fieldset>
+        <legend>Selected track</legend>
+        <div class="radios">
+          <label><input type="radio" name="track" value="A" required /> Track A — one landing page</label>
+          <label><input type="radio" name="track" value="B" /> Track B — up to three emails</label>
+        </div>
+      </fieldset>
+
+      <label for="offer_details">Offer details <span class="hint">what you sell</span></label>
+      <textarea id="offer_details" name="offer_details" required></textarea>
+
+      <label for="audience">Audience</label>
+      <textarea id="audience" name="audience" required></textarea>
+
+      <label for="price">Price <span class="hint">the price of what you sell</span></label>
+      <input id="price" name="price" type="text" required />
+
+      <label for="intended_action">Intended action <span class="hint">what the reader should do</span></label>
+      <textarea id="intended_action" name="intended_action" required></textarea>
+
+      <label for="urls_or_files">URLs or files <span class="hint">links to the page, list, or files. A file chosen here is not stored by this public page.</span></label>
+      <textarea id="urls_or_files" name="urls_or_files"></textarea>
+      <input id="files" name="files" type="file" multiple />
+
+      <label for="brand_voice">Brand voice</label>
+      <textarea id="brand_voice" name="brand_voice" required></textarea>
+
+      <label for="approved_factual_claims">Approved factual claims <span class="hint">facts you want used. If you have none, say so. We do not invent proof.</span></label>
+      <textarea id="approved_factual_claims" name="approved_factual_claims" required></textarea>
+
+      <label for="required_timing">Required timing</label>
+      <textarea id="required_timing" name="required_timing" required></textarea>
+
+      <button class="btn" type="submit">Send brief</button>
+      <p id="intake-result" class="note">This public page has no receiver. Sending the form here does not store the brief. The team confirms when the brief is complete.</p>
+    </form>
+
     <p class="note">Refunds: undelivered work or SLA breach only.</p>
     <p class="muted"><a href="../">Return to Sprint</a></p>
   </main>
+  <script>
+    document.getElementById("intake").addEventListener("submit", function (event) {
+      event.preventDefault();
+      var note = document.getElementById("intake-result");
+      note.textContent = "Not stored. This public page has no receiver, so the brief was not saved. A visit here is not proof of payment. Payment alone does not start the clock. The team confirms when the brief is complete.";
+    });
+  </script>
 </body>
 </html>
